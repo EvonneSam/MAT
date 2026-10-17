@@ -5,13 +5,14 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 WORKDIR /app
 
-# Install pre-compiled python, pandas, scikit-learn, and joblib directly via apt
+# Added python3-flask to the list
 RUN apt-get update && apt-get install -y \
     python3 \
     python3-pip \
     python3-pandas \
     python3-sklearn \
     python3-joblib \
+    python3-flask \
     && rm -rf /var/lib/apt/lists/*
 
 COPY . /app
